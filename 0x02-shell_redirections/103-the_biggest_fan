@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -f1 /dev/stdin | sort | uniq -c | sort -h -r | head -n 11 | cut -c 9- 
+cut -f1 <&0 | sort | uniq -c | sort -h -r | head -n 11 | cut -c 9- 
