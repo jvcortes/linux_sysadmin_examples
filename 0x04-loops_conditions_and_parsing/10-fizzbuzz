@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Fizz-Buzz test example
+for i in {1..100}; do
+	if [ $((i % 3)) -eq 0 ]
+	then
+		printf '%s' "Fizz"
+	fi
+	if [ $((i % 5)) -eq 0 ]
+	then
+		printf '%s' "Buzz"
+	fi
+	if [ $((i % 3)) -ne 0 ] && [ $((i % 5)) -ne 0 ]
+	then
+		printf '%d' $i
+	fi
+	echo ""
+done
