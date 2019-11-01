@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script prints "Holberton School" ten times.
+for _ in {0..9}; do echo "Holberton School"; done
