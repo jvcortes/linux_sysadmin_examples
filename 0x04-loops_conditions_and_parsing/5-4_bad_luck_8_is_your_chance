@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# This script prints "Holberton School" ten times and prints "Hi" in the 9th iteration.
+# This script prints "Holberton School" ten times, prints "bad luck" instead in the 4th iteration
+# and prints "good luck" instead in the 8th iteration.
 i=0
 while [ $i -le 9 ]
 do

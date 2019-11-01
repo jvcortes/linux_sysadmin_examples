@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# This script prints the numbers from 1 to 20, prints "bad luck from China"
+# in the 4th iteration, prints "bad luck from Japan" in the 9th iteration
+# and prints "bad luck from Italy" in the 17th iteration.
+i=0
+while [ $i -lt 20 ]
+do
+	echo "$i"
+	case $i in
+	3)
+		echo "bad luck from China"
+		;;
+	8)
+		echo "bad luck from Japan"
+		;;
+	17)	
+		echo "bad luck from Italy"
+		;;
+	esac
+	i=$((i+1))
+done
+
+
+
