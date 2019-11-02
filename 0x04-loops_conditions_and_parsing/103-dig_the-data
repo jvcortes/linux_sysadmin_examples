@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# reads Apache HTTPD logs and prints every IP with its status code, sorted by IP requests
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -r -n
+
