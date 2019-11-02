@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# reads Apache HTTPD logs and prints every IP with its status code
+awk '{print $1, $9}' apache-access.log
