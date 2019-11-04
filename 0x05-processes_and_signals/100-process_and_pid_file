@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Creates a PID file and prints "To infinity and beyond" every two seconds.
+trap "rm /var/run/holbertonscript.pid" SIGQUIT
+trap "rm /var/run/holbertonscript.pid ; echo 'I hate the kill command' ; exit" SIGTERM
+trap "echo 'Y U no love me?!'" SIGINT
+
+echo $$ > /var/run/holbertonscript.pid
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+done
