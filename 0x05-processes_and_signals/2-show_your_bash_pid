@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Shows the working processes with the word 'bash'.
+ps -axu --forest | grep 'bash'
+# shellcheck disable=SC2009
