@@ -25,6 +25,8 @@ int main(void)
 		else
 			continue;
 	}
+
+	return (0);
 }
 
 /**
