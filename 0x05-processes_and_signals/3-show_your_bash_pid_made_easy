@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Shows the working PIDs with the word 'bash'.
+pgrep -l bash
