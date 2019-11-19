@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Modifies the hosts file, 127.0.0.2 will resolve to localhost and facebook.com
+# will resolve to Google's DNS (8.8.8.8)
+cp /etc/hosts ~/hosts.temp
+grep -P -q "^127.0.0.2" ~/hosts.temp && sed -i "s/^127.0.0.2.*/127.0.0.2\tlocalhost/" ~/hosts.temp ||
+	printf "127.0.0.2\tlocalhost\n" >> ~/hosts.temp
+grep -P -q "^8.8.8.8" ~/hosts.temp && sed -i "s/^8.8.8.8.*/8.8.8.8\t\tfacebook.com/" ~/hosts.temp ||
+	printf "8.8.8.8\t\tfacebook.com\n" >> ~/hosts.temp
+cp -f ~/hosts.temp /etc/hosts
