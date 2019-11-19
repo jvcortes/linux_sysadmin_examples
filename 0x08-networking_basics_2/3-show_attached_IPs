@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Prints the currently attached IPv4 addresses.
+ip address | grep -P -o "inet \K(([0-9]{1,3}[\.]){3}[0-9]{1,3})"
