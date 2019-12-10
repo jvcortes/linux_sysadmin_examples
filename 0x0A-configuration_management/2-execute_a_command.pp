@@ -3,6 +3,6 @@
 exec { 'killall' :
   path     =>   ['/usr/bin', '/sbin/', '/bin/', '/usr/sbin'],
   provider =>   'shell',
-  command  =>   'killall killmenow'
+  command  =>   'pkill killmenow'
 }
 
