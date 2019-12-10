@@ -1,4 +1,2 @@
-#!/usr/bin/env bash
-# Creates an entry at ~/.ssh/config which allows to connect to a server without asking for a password
-grep -A1 -q "^Host 35.237.10.249" ~/.ssh/config || printf "Host 35.237.10.249" >> ~/.ssh/config
-grep -q "^IdentityFile ~/.ssh/holberton" ~/.ssh/config || printf "IdentityFile ~/.ssh/holberton" >> ~/.ssh/config
+Host 35.237.10.249
+IdentityFile ~/.ssh/holberton
