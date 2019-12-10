@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Debugs a holbertonschool/265-0 container running Apache
+service apache2 start
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+service apache2 restart
