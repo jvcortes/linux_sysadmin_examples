@@ -6,5 +6,6 @@ rule="server_name _;\n	rewrite \^\/redirect_me\/?(.*)$ https:\/\/www.youtube.com
 sed -i \
 	"s/server_name _;/${rule}/g" \
 	/etc/nginx/sites-enabled/default 
+echo 'Holberton School' > /var/www/html/index.html
 service nginx restart
 
