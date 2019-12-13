@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # Installs and activates an nginx server
-apt-get update
+apt-get -y update
 apt-get -y install nginx
-rule="server_name _;\n	rewrite \^\/redirect_me\/?(.*)$ https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
-sed -i \
-	"s/server_name _;/${rule}/g" \
-	/etc/nginx/sites-enabled/default 
+rule="\\trewrite ^/redirect_me/?(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sed -i "45 i ${rule}" /etc/nginx/sites-enabled/default 
+echo 'Holberton School' > /var/www/html/index.html
 service nginx restart
 
