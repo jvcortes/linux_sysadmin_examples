@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Installs and activates an nginx server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+rule="	rewrite ^/redirect_me/?(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+sudo sed -i "45 i ${rule}" /etc/nginx/sites-enabled/default 
+
+echo 'Holberton School' | sudo tee /var/www/html/index.html
+
+rule="	error_page 404 /404.html; \
+	location = /404.html { \
+		root /usr/share/nginx/html; \
+		internal; \
+	}"
+echo 'Ceci n'\''est pas une page' | sudo tee /usr/share/nginx/html/404.html
+sudo sed -i "67 i ${rule}" /etc/nginx/sites-enabled/default 
+
+sudo service nginx restart
