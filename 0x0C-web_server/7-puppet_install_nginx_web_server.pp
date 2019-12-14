@@ -3,7 +3,7 @@ include 'stdlib'
 
 package { 'nginx' :
   ensure   =>  'installed',
-  name     =>  'nginx',
+  name     =>  'nginx-core',
   provider =>  'apt'
 }
 
