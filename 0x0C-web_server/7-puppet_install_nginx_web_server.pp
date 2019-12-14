@@ -1,10 +1,14 @@
 # Installs and configures a nginx server
 include 'stdlib'
 
+exec { 'install nginx' :
+  command  => 'sudo apt-get -y install nginx',
+  provider => 'shell'
+}
+
 package { 'nginx' :
-  ensure   =>  'installed',
-  name     =>  'nginx-core',
-  provider =>  'apt'
+  ensure =>  'present',
+  name   =>  'nginx',
 }
 
 file { 'index.html' :
@@ -20,7 +24,6 @@ file_line { 'set-redirect' :
 }
 
 service { 'nginx' :
-  ensure   => 'running',
-  name     => 'nginx',
-  provider => 'systemd'
+  ensure => 'running',
+  name   => 'nginx'
 }
