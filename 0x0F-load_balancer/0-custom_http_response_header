@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Installs and activates an nginx server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+rule="add_header X-Served-By $(hostname);"
+sudo sed -i "46 i 	${rule}" /etc/nginx/sites-enabled/default 
+
+sudo service nginx restart
