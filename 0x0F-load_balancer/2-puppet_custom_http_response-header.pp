@@ -7,11 +7,11 @@ exec { 'install nginx' :
 
 package { 'nginx' :
   ensure =>  'present',
-  name   =>  'nginx',
+  name   =>  'nginx'
 }
 
 exec { 'set custom header' :
-  command  => "sudo sed -i \"47 i \tadd_rule X-Served-By $(hostname);\"\
+  command  => "sudo sed -i \"47 i \tadd_header X-Served-By $(hostname);\"\
   /etc/nginx/sites-enabled/default",
   provider => 'shell'
 }
