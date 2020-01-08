@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Prints some basic information about a domain and a subdomain
+print_info() {
+	subdomain=$(echo "$1" | awk -F "\t" '{print $1}' | cut -d"." -f1)
+	record_type=$(echo "$1" | awk -F "\t" '{print $4}')
+	ip=$(echo "$1" | awk -F "\t" '{print $5}')
+
+	echo "The subdomain ${subdomain} is a ${record_type} record and points"\
+		"to ${ip}"
+}
+
+if [[ $# -eq 2 ]]
+then
+	print_info "$(dig "$2.$1" | grep -A1 "ANSWER SECTION" | tail -n1)"
+elif [[ $# -eq 1 ]]
+then
+	print_info "$(dig www."$1" | grep -A1 "ANSWER SECTION" | tail -n1)"
+fi
