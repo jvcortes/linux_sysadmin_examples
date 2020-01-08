@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Runs nginx master and slave processes as the 'nginx' user
+chmod +r /etc/nginx/nginx.conf
+sudo sed -i "s/80 default_server/8080 default_server/i" /etc/nginx/sites-enabled/default
+service nginx stop
+pkill -9 apache2
+su -c nginx nginx
