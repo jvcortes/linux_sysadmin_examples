@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Runs whoami under a different user specified by the first argument.
+su -c whoami $1
