@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Prints some basic information about a domain and a subdomain
 print_info() {
-	subdomain=$(echo "$1" | awk -F "\t" '{print $1}' | cut -d"." -f1)
-	record_type=$(echo "$1" | awk -F "\t" '{print $4}')
-	ip=$(echo "$1" | awk -F "\t" '{print $5}')
+	subdomain=$(echo "$1" | awk -F "[\t ]" '{print $1}' | cut -d"." -f1)
+	record_type=$(echo "$1" | awk -F "[\t ]" '{print $4}')
+	ip=$(echo "$1" | awk -F "[\t ]" '{print $5}')
 
 	echo "The subdomain ${subdomain} is a ${record_type} record and points"\
 		"to ${ip}"
