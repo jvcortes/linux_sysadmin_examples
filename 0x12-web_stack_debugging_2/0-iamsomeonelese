@@ -2,7 +2,7 @@
 # Runs whoami under a different user specified by the first argument.
 if [[ $# -eq 1 ]]
 then
-	su -c whoami "$1"
+	su -s /bin/sh -c whoami "$1"
 else
 	whoami
 fi
