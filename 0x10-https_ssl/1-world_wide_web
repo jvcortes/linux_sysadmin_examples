@@ -15,4 +15,7 @@ then
 elif [[ $# -eq 1 ]]
 then
 	print_info "$(dig www."$1" | grep -A1 "ANSWER SECTION" | tail -n1)"
+	print_info "$(dig lb-01."$1" | grep -A1 "ANSWER SECTION" | tail -n1)"
+	print_info "$(dig web-01."$1" | grep -A1 "ANSWER SECTION" | tail -n1)"
+	print_info "$(dig web-02."$1" | grep -A1 "ANSWER SECTION" | tail -n1)"
 fi
