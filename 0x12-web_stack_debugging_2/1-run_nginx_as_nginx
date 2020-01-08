@@ -4,4 +4,5 @@ chmod +r /etc/nginx/nginx.conf
 sudo sed -i "s/listen 80 default_server/listen 8080 default_server/i" /etc/nginx/sites-enabled/default
 sudo sed -i "s/listen \[::\]:80 default_server/listen [::]:8080 default_server/i" /etc/nginx/sites-enabled/default
 service nginx stop
+pkill -9 apache2
 su -c nginx nginx
