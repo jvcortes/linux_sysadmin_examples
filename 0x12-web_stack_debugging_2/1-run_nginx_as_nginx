@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Runs nginx master and slave processes as the 'nginx' user
 chmod +r /etc/nginx/nginx.conf
-sudo sed -i "s/listen 8080 default_server/listen 80 default_server/i" /etc/nginx/sites-enabled/default
-sudo sed -i "s/listen \[::\]:8080 default_server/listen [::]:80 default_server/i" /etc/nginx/sites-enabled/default
+sudo sed -i "s/listen 80 default_server/listen 8080 default_server/i" /etc/nginx/sites-enabled/default
+sudo sed -i "s/listen \[::\]:80 default_server/listen [::]:8080 default_server/i" /etc/nginx/sites-enabled/default
 service nginx stop
 su -c nginx nginx
