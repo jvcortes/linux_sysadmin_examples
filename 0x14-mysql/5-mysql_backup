@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Generates a mysqldump from all the databases inside a MySQL server.
+mysqldump -u root --password="$1" --all-databases > backup.sql
+tar -zcf "$(date +%d-%m-%Y).tar.gz" backup.sql
