@@ -7,16 +7,16 @@ if __name__ == '__main__':
     todos = requests.get("https://jsonplaceholder.typicode.com/todos",
                          params={'userId': sys.argv[1]}).json()
 
-    completed = list(filter(lambda todo: todo["completed"], todos))
+    completed = list(filter(lambda todo: todo.get("completed"), todos))
 
     user = requests.get("https://jsonplaceholder.typicode.com/users",
                         params={'id': sys.argv[1]}).json()[0]
 
     print("Employee {} is done with tasks({}/{}):".format(
-        user["name"],
+        user.get("name"),
         len(completed),
         len(todos)))
 
     for todo in completed:
         print('\t ', end='')
-        print(todo["title"])
+        print(todo.get("title"))
