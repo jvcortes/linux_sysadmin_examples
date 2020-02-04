@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # Gathers and prints some data from https://jsonplaceholder.typicode.com/
 if __name__ == '__main__':
-    import sys
     import requests
+    import sys
 
     todos = requests.get("https://jsonplaceholder.typicode.com/todos",
                          params={'userId': sys.argv[1]}).json()
