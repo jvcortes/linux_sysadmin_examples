@@ -13,8 +13,14 @@ if __name__ == '__main__':
                         params={'id': sys.argv[1]}).json()[0]
 
     for todo in todos:
-        del todo["userId"]
+        completed = todo["completed"]
+        del todo["completed"]
+        todo["task"] = todo.get("title")
+        todo["completed"] = completed
         todo["username"] = user.get("username")
+        del todo["userId"]
+        del todo["id"]
+        del todo["title"]
 
     todo_list = {sys.argv[1]: todos}
 
