@@ -20,7 +20,7 @@ def top_ten(subreddit):
 
     if request.status_code == 301:
         print("None")
-
-    posts = request.json()["data"]["children"]
-    for post in posts:
-        print(post["data"]["title"])
+    else:
+        posts = request.json()["data"]["children"]
+        for post in posts:
+            print(post["data"]["title"])
