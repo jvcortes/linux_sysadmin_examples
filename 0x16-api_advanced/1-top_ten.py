@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# Module for task 1
+"""
+Module for task 1
+"""
 import requests
 
 
