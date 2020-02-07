@@ -13,8 +13,9 @@ def top_ten(subreddit):
         subreddit (str): subreddit to search.
     """
 
-    request = requests.get("https://www.reddit.com/r/{}/hot.json"
-                           "?limit=10".format(subreddit),
+    request = requests.get("https://www.reddit.com/r/{}/hot.json".format(
+        subreddit),
+                           params={'limit': '10'},
                            allow_redirects=False,
                            headers={'User-Agent': '941'})
 
