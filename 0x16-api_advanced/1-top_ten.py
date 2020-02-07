@@ -18,7 +18,7 @@ def top_ten(subreddit):
                            allow_redirects=False,
                            headers={'User-Agent': '941'})
 
-    if request.status_code == 301:
+    if request.status_code == 302:
         print("None")
     else:
         posts = request.json()["data"]["children"]
