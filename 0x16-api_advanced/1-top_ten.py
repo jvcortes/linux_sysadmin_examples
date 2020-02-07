@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # Module for task 1
-from json import JSONDecodeError
 import requests
+from json import JSONDecodeError
 
 
 def top_ten(subreddit):
