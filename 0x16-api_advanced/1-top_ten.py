@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # Module for task 1
+from json import JSONDecodeError
 import requests
 
 
@@ -13,15 +14,15 @@ def top_ten(subreddit):
         subreddit (str): subreddit to search.
     """
 
-    request = requests.get("https://api.reddit.com/r/{}/hot".format(
-        subreddit),
-                           params={'limit': '10', 't': 'all'},
+    request = requests.get("https://api.reddit.com"
+                           "/r/{}/hot".format(subreddit),
+                           params={'limit': '10'},
                            allow_redirects=False,
                            headers={'User-Agent': '941'})
 
-    if request.status_code == 302:
-        print("None")
-    else:
+    try:
         posts = request.json()["data"]["children"]
         for post in posts:
             print(post["data"]["title"])
+    except JSONDecodeError:
+        print("None")
