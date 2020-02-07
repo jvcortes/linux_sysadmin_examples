@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 # Module for task 1
 import requests
-from json import JSONDecodeError
 
 
 def top_ten(subreddit):
@@ -24,5 +23,5 @@ def top_ten(subreddit):
         posts = request.json()["data"]["children"]
         for post in posts:
             print(post["data"]["title"])
-    except JSONDecodeError:
+    except ValueError:
         print("None")
