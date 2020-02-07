@@ -15,7 +15,7 @@ def top_ten(subreddit):
 
     request = requests.get("https://api.reddit.com/r/{}/hot".format(
         subreddit),
-                           params={'limit': '10'},
+                           params={'limit': '10', 't': 'all'},
                            allow_redirects=False,
                            headers={'User-Agent': '941'})
 
