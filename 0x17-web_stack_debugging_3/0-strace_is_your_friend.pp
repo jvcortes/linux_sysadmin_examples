@@ -1,3 +1,6 @@
+# Fixes an Apache2 HTTPD installation with WordPress sourcing the
+# correspondant environment variables and fixing a typo in one of
+# the required WordPress files at the WordPress settings file.
 exec { 'source envvars' :
   command  => '. /etc/apache2/envvars',
   provider => shell
